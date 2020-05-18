@@ -1,0 +1,25 @@
+----------------------------------------------------
+EXOS EN LIGNE
+----------------------------------------------------
+
+EXO 1
+use online_exo
+db.restaurants.find().pretty()
+
+EXO 2
+db.restaurants.find({}, {"restaurant_id":1, "name":1, "borough":1, "cuisine":1}).pretty()
+
+EXO 3
+db.restaurants.find({}, {"_id":0, "restaurant_id":1, "name":1, "borough":1, "cuisine":1}).pretty()
+
+EXO 4
+db.restaurants.find({}, {"_id":0, "restaurant_id":1, "name":1, "borough":1, "address.zipcode":1}).pretty()
+
+EXO 5
+db.restaurants.find({"borough":"Bronx"}).pretty()
+
+EXO 6
+db.restaurants.find({"borough":"Bronx"}).limit(5).pretty()
+
+EXO 7
+db.restaurants.find({"borough":"Bronx"}).skip(5).limit(5).pretty()

@@ -37,6 +37,7 @@ use magic_db
 db.magic_users.find().pretty()
 
 EXO 9
+use social_db
 db.users.find({"gender":"female"})
 
 EXO 10
@@ -48,9 +49,36 @@ db.createCollection("bands")
 db.bands.insert([{"members" : ["Jimmy", "Eleni"]}, {"members" : ["Eleni", "Christine"]}, {"members" : ["Lil Random", "HHH", "Doll"]}])
 db.bands.find({"members":"Eleni"}).pretty()
 
+EXO 12
+db.bands.find({"members":{$in:["Eleni", "Doll"]}}).pretty()
 
+EXO 13
+db.bands.find({"creation_date":{$lt:2010}})
+use social_db
+db.users.find({"age":{$lt:27}}).pretty()
 
+EXO 14
+db.bands.find({"creation_date":{$gt:2010},"adress.city":"Coimbra"})
+use social_db
+db.users.find({"age":{$gt:27}, "gender":"female"}).pretty()
 
+EXO 15
+db.players.find({"team":"Seattle Supersonics"})
 
+EXO 16
+db.players.find({"jerseyNumber":40})
 
+EXO 17
+db.players.find({"previousTeams":"Chicago Bulls"})
 
+EXO 18
+db.players.find({"previousTeams":{$in:["Chicago Bulls", "Miami Heat"]}})
+
+EXO 19
+db.players.find({"previousTeams":{$all:["Orlando Magic", "New York Knicks"]}})
+
+EXO 20
+db.players.find({"age":{$gt:30}})
+
+EXO 21
+db.players.find({"birthPlace.country":"Spain"})

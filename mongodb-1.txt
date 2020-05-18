@@ -26,6 +26,31 @@ db.magic_users.insert({name:"Johnson"})
 db.magic_users.find()
 
 EXO 7
+db.createCollection("magic_products")
+db.magic_products.insert({name:"Crazy wine"})
+db.magic_products.insert({name:"Weird shoes"})
+db.magic_products.find()
+db.magic_products.findOne()
+
+EXO 8
+use magic_db
+db.magic_users.find().pretty()
+
+EXO 9
+db.users.find({"gender":"female"})
+
+EXO 10
+db.users.find({"gender":"female", "age":24}).pretty()
+
+EXO 11
+use artists_db
+db.createCollection("bands")
+db.bands.insert([{"members" : ["Jimmy", "Eleni"]}, {"members" : ["Eleni", "Christine"]}, {"members" : ["Lil Random", "HHH", "Doll"]}])
+db.bands.find({"members":"Eleni"}).pretty()
+
+
+
+
 
 
 

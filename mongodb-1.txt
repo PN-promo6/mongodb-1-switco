@@ -1,0 +1,31 @@
+EXO 1
+use twisted_db
+
+EXO 2
+show databases
+
+EXO 3
+use crooked_db
+db.createCollection("users")
+show databases
+
+EXO 4
+use fake_db
+db.createCollection("fake_users")
+db.createCollection("fake_customers")
+use crooked_db
+show collections
+
+EXO 5
+db.fake_users.insert({name:"Mick", city:"Chicago", age:64})
+
+EXO 6
+use magic_db
+db.createCollection("magic_users")
+db.magic_users.insert({name:"Johnson"})
+db.magic_users.find()
+
+EXO 7
+
+
+
